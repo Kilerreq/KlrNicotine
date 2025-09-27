@@ -1,0 +1,81 @@
+# ===============================
+#  Language: English (EN)
+#  Mirrors the Polish file keys
+#  Use color codes with & (e.g. &7, &b, &l, &o)
+# ===============================
+
+prefix: "&8[&bNicotine&8] &7"
+
+# ---- Help ----
+help_header: "&b---- &lNicotine&b Help ----"
+help_list: |
+  &7/np help &8-&7 Show this help
+  &7/np version &8-&7 Show plugin version
+  &7/np reload &8-&7 Reload configs and languages
+  &7/np give cigarette <id> &8-&7 Give a cigarette pack
+  &7/np give snus <id> &8-&7 Give a snus pack
+  &7/wypluj &8-&7 Spit the snus out
+help_footer: "&7-------------------------------"
+
+# ---- Generic ----
+unknown_command: "&cUnknown subcommand."
+version: "&7Plugin version: &b%version%"
+config_reloaded: "&aConfiguration reloaded."
+player_only: "&cThis command can be used in-game only."
+usage_give: "&cUsage: /np give <cigarette|snus> <id>"
+
+# ---- Give feedback ----
+np_give_cigarette_pack: "&aYou received a cigarette pack: &e%pack%"
+np_cigarette_pack_not_found: "&cNo cigarette pack found: &e%pack%"
+np_give_snus_pack: "&aYou received a snus pack: &e%pack%"
+np_snus_pack_not_found: "&cNo snus pack found: &e%pack%"
+
+# ---- Pack warnings (health) ----
+pack_warning_missing: "&cNo health warning available."
+health_warnings:
+  - "&cSmoking seriously harms you and others around you."
+  - "&cSmoking kills."
+  - "&cTobacco smoke contains over 70 substances that cause cancer."
+  - "&cSmokers die younger."
+  - "&cProtect children: do not let them breathe your smoke."
+  - "&cStop now – ask for help."
+
+# ---- Cigarettes: lore / text ----
+cigarette_lore: "&7&o%uses%/%max%"
+cigarette_lore_format: "&7&o%uses%/%max%"
+cigarette_pack_lore: "&7&o%max%/%max%"
+cigarette_pack_lore_count: "&7&o%remaining%/%max%"
+cigarette_pack_empty: "&7&oEmpty pack"
+
+# ---- Snus: lore / text ----
+snus_pack_lore: "&7&o%max%/%max%"
+snus_pack_lore_count: "&7&o%remaining%/%max%"
+snus_put_in_mouth: "&7You put a snus in your mouth."
+snus_already_in_mouth: "&cYou already have a snus in your mouth."
+snus_not_in_mouth: "&cYou don't have a snus in your mouth."
+snus_spit_success: "&7You spat the snus out."
+snus_effects_ended_reminder: "&7Your snus effects have ended – consider spitting it out."
+
+# ---- ActionBar messages ----
+actionbar_smoke: "&7Inhale: &b%time%s"
+actionbar_smoke_stopped: "&7You inhaled for &b%time%s"
+actionbar:
+  overdose_vomit_ab: "&eVomiting..."
+  overdose_knockdown_ab: "&cKnockdown!"
+  snus_overdose_vomit_ab: "&eVomiting..."
+  snus_overdose_knockdown_ab: "&cKnockdown!"
+  snus_spit: "&7You spat the snus out."
+
+# ---- Info / placeholders ----
+info_placeholder: "&7Info will be added here."
+stats_placeholder: "&7Stats will be added here."
+
+# ---- Overdose (cigarettes) ----
+overdose: "&cOverdose!"
+overdose_unlocked: "&aYou have been revived."
+overdose_knockdown: "&cYou have been knocked down due to overdose."
+overdose_vomit_started: "&7You feel sick."
+
+# ---- Snus overdose ----
+snus_overdose_vomit_started: "&7You feel sick after the snus."
+snus_overdose_knockdown: "&cSnus overdose – you got knocked down."

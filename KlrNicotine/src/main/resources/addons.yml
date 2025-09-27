@@ -1,0 +1,13 @@
+# =============================================================================
+# Kill_Nicotine - addons.yml
+# =============================================================================
+# Addon items configuration (e.g., lighter)
+# =============================================================================
+
+addons:
+  lighter:
+    material: "FLINT_AND_STEEL"   # any Material name
+    name: "&6&lZapalniczka"
+    lore:
+      - "&7&oDo odpalania papierosów"
+    custom_model_data: 3001       # 0 to disable

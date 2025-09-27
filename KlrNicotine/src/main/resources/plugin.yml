@@ -1,0 +1,33 @@
+name: KlrNicotine
+main: cool.kilereq.kill_Nicotine.MainNicotine
+version: 2.5.0
+api-version: 1.20
+author: Kiler3q__
+
+# ---------------------------------------------------------------------------
+# Commands
+# ---------------------------------------------------------------------------
+commands:
+  np:
+    description: Main NicotinePremium command
+    usage: "/np <help|version|reload|give|wypluj|info|stats>"
+    permission: nicotine.admin
+    permission-message: "&cYou don't have permission to use this command."
+
+  wypluj:
+    description: Spit out current snus (clears snus effects)
+    usage: "/wypluj"
+    permission: snus.wypluj
+    permission-message: "&cYou cannot use this command."
+
+# ---------------------------------------------------------------------------
+# Permissions
+# ---------------------------------------------------------------------------
+permissions:
+  nicotine.admin:
+    description: Access to /np admin subcommands.
+    default: op
+
+  snus.wypluj:
+    description: Allows using /wypluj to clear current snus.
+    default: true

@@ -1,0 +1,111 @@
+# =============================================================================
+# Kill_Nicotine - lang_pl.yml
+# =============================================================================
+# Każdy klucz to komunikat w grze. Kolory: &a, &c, &7, &l, &o itp.
+# Dla ActionBar używamy sekcji "actionbar.*" z placeholderami, np. %duration%.
+# =============================================================================
+
+# Prefiks dodawany przed wszystkimi wiadomościami
+prefix: "&6&l[&e&lNicotinePremium&6&l] "
+
+# ---------------------------------------------------------------------------
+# Komendy ogólne
+# ---------------------------------------------------------------------------
+unknown_command: "&cNieznana komenda, użyj &e/np help"
+player_only: "&cTą komendę może używać tylko gracz!"
+config_reloaded: "&aKonfiguracja została przeładowana pomyślnie."
+usage_give: "&eUżycie: &7/np give <cigarette|snus> <id>"
+version: "&aWersja pluginu: &e%version%"
+
+# ---------------------------------------------------------------------------
+# Wiadomości dla paczek papierosów
+# ---------------------------------------------------------------------------
+np_give_cigarette_pack: "&aOtrzymałeś paczkę papierosów: %pack%"
+np_cigarette_pack_not_found: "&cNie znaleziono paczki papierosów o ID: %pack%"
+
+# ---------------------------------------------------------------------------
+# Wiadomości dla paczek snusów
+# ---------------------------------------------------------------------------
+np_give_snus_pack: "&aOtrzymałeś paczkę snusów: %pack%"
+np_snus_pack_not_found: "&cNie znaleziono paczki snusów o ID: %pack%"
+
+# ---------------------------------------------------------------------------
+# Wiadomości do dodatków
+# ---------------------------------------------------------------------------
+np_give_lighter: "&aOtrzymałeś zapalniczkę."
+np_addon_not_found: "&cNie znaleziono dodatku: %addon%"
+
+# ---------------------------------------------------------------------------
+# Pomoc (/np help)
+# ---------------------------------------------------------------------------
+help_header: "&8======&6&l[&e&lNicotinePremium&6&l]&8======"
+help_list: |
+  &e/np version &7- Wersja pluginu
+  &e/np reload &7- Przeładowanie pluginu
+  &e/np give cigarette <id> &7- Daje paczkę papierosów
+  &e/np give snus <id> &7- Daje paczkę snusów
+  &e/wypluj &7- Wypluwa Aktualnego snusa z buzi
+help_footer: "&8============================="
+
+# ---------------------------------------------------------------------------
+# Placeholdery (na przyszłość)
+# ---------------------------------------------------------------------------
+info_placeholder: "&7Informacje: jeszcze niedostępne"
+stats_placeholder: "&7Statystyki: jeszcze niedostępne"
+
+# ---------------------------------------------------------------------------
+# Papierosy
+# ---------------------------------------------------------------------------
+cigarette_smoked: "&7&oWypaliłeś papierosa"
+cigarette_effects_wore_off: "&7&oNudności skończyły się"
+
+# ---------------------------------------------------------------------------
+# Snusy
+# ---------------------------------------------------------------------------
+snus_already_in_mouth: "&cMasz już snusa w buzi!"
+snus_not_in_mouth: "&cNie masz snusa w buzi."
+snus_effects_end_reminder: "&7&oSnus stracił właściwości, wypluj go &f/wypluj"
+
+# ---------------------------------------------------------------------------
+# ActionBar (Placeholder: %time%)
+# ---------------------------------------------------------------------------
+actionbar:
+  cigarette_smoke: "&7&oZaciągasz się... &e%time%s"
+  cigarette_smoke_end: "&7&oZaciągnąłeś się"
+
+  overdose_nausea_applied: "&7&oKręci ci się w głowie..."
+  overdose_vomit_started: "&7&oZrobiło Ci się niedobrze..."
+
+  overdose_vomit_ab: "&7&oWymiotujesz..."
+  overdose_knockdown_ab: "&c&oPowalenie!"
+
+
+  snus_used: "&7&oWziąłeś snusa"
+  snus_spit: "&7&oWyplułeś snusa"
+  snus_effects_end_reminder: "&7&oTwój snus stracił właściwości - użyj &f/wypluj"
+
+  snus_overdose_vomit_started: "&7&oPoczułeś się źle po snusie..."
+
+  snus_overdose_vomit_ab: "&7&oWymiotujesz..."
+  snus_overdose_knockdown_ab: "&c&oStraciłeś przytomność!"
+
+# ---------------------------------------------------------------------------
+# Ostrzeżenia zdrowotne (wyświetlane na paczkach papierosów).
+# Losowane przy tworzeniu paczki, jeśli lock_per_pack jest na true, są stałe dla każdej pojedyńczej paczki.
+# ---------------------------------------------------------------------------
+health_warnings:
+  - "&f&lPalenie zabija."
+  - "&f&lPalenie poważnie szkodzi Tobie i osobom w Twoim otoczeniu."
+  - "&f&lProdukty tytoniowe są silnie uzależniające."
+  - "&f&lPalenie powoduje raka płuc."
+  - "&f&lPalenie zwiększa ryzyko chorób serca i udaru."
+  - "&f&lRzuć palenie — poproś o pomoc specjalistę."
+  - "&f&lDym tytoniowy szkodzi dzieciom i kobietom w ciąży."
+  - "&f&lPalenie skraca życie."
+  - "&f&lPalenie może powodować choroby jamy ustnej i gardła."
+  - "&f&lPalenie pogarsza kondycję i wydolność organizmu."
+
+# ---------------------------------------------------------------------------
+# Dodatkowe
+# ---------------------------------------------------------------------------
+no_permission: "&cNie masz uprawnień do tej komendy!"

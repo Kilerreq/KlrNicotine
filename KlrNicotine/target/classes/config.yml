@@ -1,0 +1,250 @@
+# =============================================================================
+# Kill_Nicotine - config.yml
+# =============================================================================
+# Central configuration:
+#  - language selection and files
+#  - lore templates (ALWAYS with &7&o for italic gray)
+#  - actionbar messages (for snus/cigarettes)
+#  - reminder intervals
+#  - item defaults and pack definitions
+#
+# Color codes: use '&' (e.g. &a, &c, &7, &l, &o).
+# Placeholders:
+#   %max%         -> max items/uses
+#   %remaining%   -> remaining items in a pack
+#   %pack_name%   -> display name of the pack
+#   %uses%        -> dynamic uses for single items (if used)
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Language selection for chat messages:
+#   - 'pl' -> resources/lang_pl.yml
+#   - 'en' -> resources/lang_en.yml
+# -----------------------------------------------------------------------------
+language:
+  selected: "pl"
+
+
+# -----------------------------------------------------------------------------
+# Snus definitions file (single Polish version as requested)
+# -----------------------------------------------------------------------------
+snus_file: snus.yml
+
+# -----------------------------------------------------------------------------
+# Debug flags
+# -----------------------------------------------------------------------------
+debug_snus: false
+
+# -----------------------------------------------------------------------------
+# Warnings toggles (health warnings on cigarette packs)
+# -----------------------------------------------------------------------------
+warnings:
+  enabled: true        # False -> Don't have warnings on your cigarette packs
+  lock_per_pack: false  # True -> Each pack of cigarettes have same warning
+
+# -----------------------------------------------------------------------------
+# General defaults (used by managers)
+# -----------------------------------------------------------------------------
+general:
+  empty_pack_name: "&7&oPusta paczka"
+  pack_size: 20 # Default size for packs when not specified in a pack entry
+
+  cigarette:
+    material: "BLAZE_ROD"
+    name: "&7&lPapieros"
+    lore: "&7&o%uses%/%max%"
+    model_data: 1000
+    max_uses: 30
+
+  snus:
+    material: "SUGAR"
+    name: "&b&lSnus"
+    lore: "&7&o%uses%/%max%"
+    model_data: 2000
+    max_uses: 30
+
+  stub:
+    material: "BLAZE_ROD"
+    name: "&7&oKiep"
+    lore:
+      - # You can add here custom lore for stub
+    model_data: 1100
+
+# -----------------------------------------------------------------------------
+# Cigarette pack lore templates
+# -----------------------------------------------------------------------------
+cigarette_pack_lore: "&7&o%max%/%max%"
+cigarette_pack_lore_count: "&7&o%remaining%/%max%"
+
+# Single cigarette item lore (if used by your implementation)
+cigarette_lore: "&7&o%max%/%max%"
+cigarette_lore_format: "&7&o%uses%/%max%"
+
+# Snus pack: initial (full) and dynamic (count)
+snus_pack_lore: "&7&o%max%/%max%"
+snus_pack_lore_count: "&7&o%remaining%/%max%"
+
+# -----------------------------------------------------------------------------
+# Cigarettes Overdose
+# -----------------------------------------------------------------------------
+overdose:
+  enabled: true              # True -> Enable overdose by cigarettes
+
+  # Sliding window length for counting puffs
+  window_seconds: 60
+
+  # --- Stages by puff count in the window ---
+  stages:
+    s1:
+      threshold: 15         # >= 15 -> only nausea I (amplifier 0)
+      nausea:
+        duration_seconds: 6
+        amplifier: 0
+    s2:
+      threshold: 20         # >= 20 -> nausea II + blindness I
+      nausea:
+        duration_seconds: 8
+        amplifier: 1
+      blindness:
+        duration_seconds: 5
+        amplifier: 0
+    s3:
+      threshold: 25         # >= 25 -> nausea II + blindness II + vomiting series
+      nausea:
+        duration_seconds: 10
+        amplifier: 1
+      blindness:
+        duration_seconds: 6
+        amplifier: 1
+      vomiting:
+        count: 5            # how many times the vomiting sequence should repeat
+        interval_ticks: 80  # delay between vomiting bursts
+    s4:
+      threshold: 30         # >= 30 -> knockdown (command)
+      knockdown: true
+
+  # --- Vomiting visual & sound configuration ---
+  vomiting:
+    enabled: true   # Master switch: enable/disable vomiting effect
+    count: 5
+    interval_ticks: 80
+
+    # Particle rendering mode:
+    # - BLOCK = uses a block material (e.g. SOUL_SAND) for particles
+    # - ITEM  = uses an item material (e.g. SLIME_BALL) for particles
+    mode: "BLOCK"
+
+    # Materials for particles (depending on mode)
+    block_material: "SOUL_SAND"   # examples: SOUL_SAND, SAND, RED_SAND
+    item_material: "SLIME_BALL"   # used only if mode: ITEM
+
+    # Trail settings (projectile-like stream from player’s mouth to ground)
+    trail_max_ticks: 50   # how long the stream flies
+    trail_count: 6        # particle density per tick in the flying stream
+
+    # Splash settings (particles bursting when hitting the ground)
+    splash_bursts: 16      # how many separate splash bursts are spawned
+    splash_count: 40       # particle density for each splash burst
+
+    # Legacy / fallback particle spawn count (if needed by some servers)
+    particle_count: 100
+
+    # Sound effect while vomiting
+    sound: ENTITY_PLAYER_BURP
+    sound_volume: 1.0
+    sound_pitch: 1.0
+
+  # Knockdown command from stages.s4.knockdown
+  knockdown:
+    enabled: true
+    command: "reviveme down %player%"   # Command to execute when a player reaches the knockdown stage (%player% = player name)
+    run_as_console: true                # If true, the command is executed by console; if false, the player executes it
+    delay_ticks: 0                      # Delay before executing the knockdown command (in ticks; 20 = 1 second)
+
+
+    lock_after_ms: 1                    # Time in milliseconds to keep the player locked after knockdown (ignores new puffs)
+                                        # Example: 180000 = 3 minutes lock time
+
+
+    unlock_on_commands:                 # List of command prefixes that will unlock the player immediately
+      - # Add here commands             # The last argument of the command must be the target player's name
+                                        # Example: "reviveme up Steve" or "revive Steve"
+
+# -----------------------------------------------------------------------------
+# Snus Overdose
+# -----------------------------------------------------------------------------
+snus:
+  # ---------------------------------------------------------------------------
+  # Reminder after snus effects end (ActionBar every X seconds)
+  # ---------------------------------------------------------------------------
+  reminder:
+    enabled: true               # enable/disable reminder
+    interval_seconds: 120       # interval (seconds) between reminders
+
+  # ---------------------------------------------------------------------------
+  # NICOTINE THRESHOLDS (mg) – checked once, when player puts snus in mouth
+  #  - >= nausea_threshold_mg             -> nausea only
+  #  - >= nausea_blindness_threshold_mg   -> nausea + blindness
+  #  - >= vomiting_threshold_mg           -> nausea + blindness + vomiting
+  # NOTE: stage-based trigger logic is below in snus.overdose
+  # ---------------------------------------------------------------------------
+  nausea_threshold_mg: 50
+  nausea_blindness_threshold_mg: 66
+  vomiting_threshold_mg: 90
+
+  # ---------------------------------------------------------------------------
+  # GLOBAL DEFAULTS for “feeling bad” (overdose) logic by STAGE
+  # If a type in snus.yml does NOT have its own values (trigger_stage/vomiting/effects),
+  # then these defaults will be used.
+  # ---------------------------------------------------------------------------
+  overdose:
+    default_trigger_stage: 3        # stage at which "feeling bad" is triggered
+    default_vomiting: true          # vomiting enabled by default at trigger
+    default_effects:                # additional effects at trigger stage (if type doesn’t override)
+      - "NAUSEA:2:45"
+      - "BLINDNESS:1:20"
+
+  # ---------------------------------------------------------------------------
+  # KNOCKDOWN (optional, default OFF) for snus
+  # When mg >= threshold_mg, the command will be executed (e.g. from revive plugin).
+  # ---------------------------------------------------------------------------
+  knockdown:
+    enabled: false
+    threshold_mg: 120                   # >= → execute knockdown command
+    command: "reviveme down %player%"   # %player% will be replaced with player name
+    run_as_console: true                # true = console executes; false = player executes
+    delay_ticks: 0                      # delay in ticks (20 = 1 sec)
+    lock_after_ms: 180000               # lock overdose re-trigger for X ms after knockdown (3 min)
+    unlock_on_commands:                 # commands that immediately unlock player (last arg = player name)
+      - "reviveme up"
+      - "revive"
+
+  # ---------------------------------------------------------------------------
+  # VOMITING VISUALS FOR SNUS
+  # If omitted, falls back to: overdose.vomiting
+  # ---------------------------------------------------------------------------
+  vomiting:
+    enabled: true
+    # Particle mode:
+    #   BLOCK – uses a block material (e.g. SOUL_SAND) as particle
+    #   ITEM  – uses an item material (e.g. SLIME_BALL) as particle
+    #   BASIC – simple mode without block/item data (if ever needed)
+    mode: "BLOCK"                 # BLOCK | ITEM | BASIC
+
+    # Particle materials (depending on mode)
+    block_material: "SOUL_SAND"   # e.g. SOUL_SAND, SAND, RED_SAND
+    # item_material: "SLIME_BALL" # uncomment only if mode: ITEM
+
+    # Stream (mouth → ground)
+    trail_max_ticks: 20           # how long the stream flies (ticks)
+    trail_count: 6                # particle density per tick in stream
+
+    # Ground splash
+    splash_bursts: 6              # how many separate splash bursts
+    splash_count: 12              # particle density in each burst
+
+    # Sound
+    sound: ENTITY_PLAYER_BURP
+    sound_volume: 1.0
+    sound_pitch: 1.0
+

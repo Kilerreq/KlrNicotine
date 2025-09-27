@@ -1,0 +1,1274 @@
+# =====================================================
+#  SNUS CONFIGURATION (snus.yml)
+#  - snus_types: logical types (display name, nicotine mg, effects/stages)
+#  - snus_packs: physical packs you give to players (size, item, name) and which type they spawn
+# =====================================================
+
+snus_types:
+  GENERAL:
+    display_name: "&b&lGeneral &f&l| &fNicotine Pouches"
+    nicotine_mg: 20
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2199
+    overdose:
+      trigger_stage: 3        # 1 = pierwszy etap, 2 = drugi, 3 = trzeci, itd.
+      vomiting: false         # czy uruchomić animację wymiotów (globalna konfiguracja particle/sounds)
+      effects:                # dodatkowe efekty na tym etapie
+        - "NAUSEA:2:45"
+        - "BLINDNESS:1:20"
+    stages:
+      - effects:
+          - "SPEED:2:10"
+          - "JUMP:1:10"
+          - "BLINDNESS:2:10"
+        delay_after: 15
+        extra_after:
+          - "CONFUSION:1:10"
+      - effects:
+          - "SPEED:3:10"
+        delay_after: 10
+        extra_after:
+          - "CONFUSION:1:10"
+      - effects:
+          - "SPEED:4:10"
+          - "STRENGTH:2:10"
+        delay_after: 15
+        extra_after:
+          - "CONFUSION:1:10"
+      - effects:
+          - "SPEED:3:10"
+        delay_after: 10
+        extra_after:
+          - "CONFUSION:1:10"
+
+
+
+  CUBA_Blackline:
+    display_name: "&0&lCUBA Blackline &f&l| &fNicotine Pouches"
+    nicotine_mg: 66
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2101
+    stages:
+      - effects:
+          - "SPEED:1:720"         # 12 min
+          - "STRENGTH:1:120"      # 2 min
+          - "JUMP:1:780"          # 13 min
+          - "BLINDNESS:2:180"     # 3 min
+        delay_after: 780           # 13 min
+        extra_after:
+          - "CONFUSION:1:45"      # 45 s
+      - effects:
+          - "SPEED:3:480"         # 8 min
+          - "STRENGTH:2:60"       # 1 min
+          - "JUMP:2:360"          # 6 min
+        delay_after: 480
+        extra_after:
+          - "CONFUSION:1:120"     # 2 min
+      - effects:
+          - "SPEED:4:240"         # 4 min
+          - "STRENGTH:3:30"       # 30 s
+          - "BLINDNESS:5:60"      # 1 min
+          - "JUMP:3:360"          # 6 min
+        delay_after: 360
+        extra_after:
+          - "CONFUSION:1:180"     # 3 min
+
+  Iceberg:
+    display_name: "&7&lIceberg &f&l| &fNicotine Pouches"
+    nicotine_mg: 50
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2102
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:480"
+          - "BLINDNESS:1:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:30"
+      - effects:
+          - "SPEED:3:420"
+          - "JUMP:2:180"
+        delay_after: 360
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:300"
+          - "STRENGTH:1:45"
+        delay_after: 240
+        extra_after:
+          - "CONFUSION:1:75"
+
+  VELO_Mid:
+    display_name: "&f&lVELO &f&l| &fNicotine Pouches"
+    nicotine_mg: 10
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2103
+    stages:
+      - effects:
+          - "SPEED:2:420"      # 7 min
+          - "JUMP:1:300"       # 5 min
+          - "BLINDNESS:1:120"  # 2 min
+        delay_after: 420
+        extra_after:
+          - "CONFUSION:1:30"  # 30 s
+      - effects:
+          - "SPEED:3:300"      # 5 min
+          - "JUMP:2:180"       # 3 min
+        delay_after: 360
+        extra_after:
+          - "CONFUSION:1:60"   # 1 min
+      - effects:
+          - "SPEED:4:150"      # 2,5 min
+          - "JUMP:3:60"        # 1 min
+          - "STRENGTH:1:60"    # 1 min
+          - "BLINDNESS:2:60"   # 1 min
+        delay_after: 90
+        extra_after:
+          - "CONFUSION:1:90"   # 1,5 min
+
+  VELO_Hard:
+    display_name: "&f&lVELO &f&l| &fNicotine Pouches"
+    nicotine_mg: 20
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2104
+    stages:
+      - effects:
+          - "SPEED:2:420"      # 7 min
+          - "JUMP:1:300"       # 5 min
+          - "BLINDNESS:1:120"  # 2 min
+        delay_after: 420
+        extra_after:
+          - "CONFUSION:1:30"  # 30 s
+      - effects:
+          - "SPEED:3:300"      # 5 min
+          - "JUMP:2:180"       # 3 min
+        delay_after: 360
+        extra_after:
+          - "CONFUSION:1:60"   # 1 min
+      - effects:
+          - "SPEED:4:150"      # 2,5 min
+          - "JUMP:3:60"        # 1 min
+          - "STRENGTH:1:60"    # 1 min
+          - "BLINDNESS:2:60"   # 1 min
+        delay_after: 90
+        extra_after:
+          - "CONFUSION:1:90"   # 1,5 min
+          -
+
+  77_Lite:
+    display_name: "&c&l77 &f&l| &fNicotine Pouches"
+    nicotine_mg: 8
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2105
+    stages:
+      - effects:
+          - "SPEED:2:540"
+          - "JUMP:1:360"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:30"
+      - effects:
+          - "SPEED:3:300"
+          - "JUMP:2:180"
+          - "STRENGTH:1:60"
+        delay_after: 210
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:2:240"
+          - "STRENGTH:1:60"
+        delay_after: 120
+        extra_after:
+          - "CONFUSION:1:60"
+
+  77_Mid:
+    display_name: "&8&l77 &f&l| &fNicotine Pouches"
+    nicotine_mg: 20
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2106
+    stages:
+      - effects:
+          - "SPEED:2:540"
+          - "JUMP:1:360"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:30"
+      - effects:
+          - "SPEED:3:300"
+          - "JUMP:2:180"
+          - "STRENGTH:1:60"
+        delay_after: 210
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:2:240"
+          - "STRENGTH:1:60"
+        delay_after: 120
+        extra_after:
+          - "CONFUSION:1:60"
+
+  77_Strong:
+    display_name: "&c&l77 Ghost &f&l| &fNicotine Pouches"
+    nicotine_mg: 40
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2107
+    stages:
+      - effects:
+          - "SPEED:2:540"
+          - "JUMP:1:360"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:30"
+      - effects:
+          - "SPEED:3:300"
+          - "JUMP:2:180"
+          - "STRENGTH:1:60"
+        delay_after: 210
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:2:240"
+          - "STRENGTH:1:60"
+        delay_after: 120
+        extra_after:
+          - "CONFUSION:1:60"
+
+  GARANT:
+    display_name: "&9&lGARANT &f&l| &fNicotine Pouches"
+    nicotine_mg: 50
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2108
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  PABLO:
+    display_name: "&c&lPABLO &f&l| &fNicotine Pouches"
+    nicotine_mg: 55
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2109
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  BEZZER_Lite:
+    display_name: "&f&lBezzer &f&l| &fNicotine Pouches"
+    nicotine_mg: 20
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2110
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  BEZZER_Hard:
+    display_name: "&f&lBezzer &f&l| &fNicotine Pouches"
+    nicotine_mg: 50
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2111
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  BEZZER_Szony:
+    display_name: "&f&lBezzer SHONY &f&l| &fNicotine Pouches"
+    nicotine_mg: 50
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2112
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  R4VE_Lite:
+    display_name: "&8&lR&4&l4&8&lVE &f&l| &fNicotine Pouches"
+    nicotine_mg: 20
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2113
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  R4VE_Mid:
+    display_name: "&8&lR&4&l4&8&lVE &f&l| &fNicotine Pouches"
+    nicotine_mg: 50
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2114
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  R4VE_Hard:
+    display_name: "&8&lR&4&l4&8&lVE &f&l| &fNicotine Pouches"
+    nicotine_mg: 80
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2115
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  R4VE_Strong:
+    display_name: "&8&lR&4&l4&8&lVE &f&l| &fNicotine Pouches"
+    nicotine_mg: 100
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2116
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  BJORN:
+    display_name: "&fBJÖRN &f&l| &fNicotine Pouches"
+    nicotine_mg: 30
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2118
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  BARON:
+    display_name: "&6&lBARON &f&l| &fNicotine Pouches"
+    nicotine_mg: 77
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2119
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  Supreme:
+    display_name: "&e&lSupreme &f&l| &fNicotine Pouches"
+    nicotine_mg: 150
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2120
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+  ICEBERG_Pie:
+    display_name: "&e&lIceberg Pie &f&l| &fNicotine Pouches"
+    nicotine_mg: 50
+    taken_item:
+      material: SUGAR
+      custom_model_data: 2120
+    stages:
+      - effects:
+          - "SPEED:2:600"
+          - "JUMP:1:420"
+          - "BLINDNESS:2:120"
+        delay_after: 600
+        extra_after:
+          - "CONFUSION:1:45"
+      - effects:
+          - "SPEED:3:480"
+        delay_after: 300
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:4:240"
+          - "STRENGTH:2:60"
+        delay_after: 45
+        extra_after:
+          - "CONFUSION:1:60"
+      - effects:
+          - "SPEED:3:180"
+        delay_after: 30
+        extra_after:
+          - "CONFUSION:1:90"
+
+# -----------------------------------------------------
+#  Physical packs of snus (the item players click)
+#  Each pack points to a snus "type" above via `type:`
+# -----------------------------------------------------
+snus_packs:
+  GENERAL:
+    item: CLAY_BALL
+    name: "&b&lGENERAL &7&l- Mint &4&l20mg"
+    type: "GENERAL"                # <- key from snus_types
+    size: 20
+    custom_model_data: 2099
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  CUBA_Blackline_Cherry:
+    item: CLAY_BALL
+    name: "&0&lCUBA Blackline &7&l- &4&lCherry &f&l66mg"
+    type: "CUBA_Blackline"                # <- key from snus_types
+    size: 20
+    custom_model_data: 2001
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  CUBA_Blackline_Black_Currant:
+    item: CLAY_BALL
+    name: "&0&lCUBA Blackline &7&l- &9&lBlack Currant &f&l66mg"
+    type: "CUBA_Blackline"                # <- key from snus_types
+    size: 20
+    custom_model_data: 2001
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  CUBA_Blackline_Peach:
+    item: CLAY_BALL
+    name: "&0&lCUBA Blackline &7&l- &e&lPeach &f&l66mg"
+    type: "CUBA_Blackline"                # <- key from snus_types
+    size: 20
+    custom_model_data: 2001
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  CUBA_Blackline_Watermelon:
+    item: CLAY_BALL
+    name: "&0&lCUBA Blackline &7&l- &7&lWatermelon &f&l66mg"
+    type: "CUBA_Blackline"                # <- key from snus_types
+    size: 20
+    custom_model_data: 2001
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  CUBA_Blackline_Apple_Juice:
+    item: CLAY_BALL
+    name: "&0&lCUBA Blackline &7&l- &a&lApple Juice &f&l66mg"
+    type: "CUBA_Blackline"                # <- key from snus_types
+    size: 20
+    custom_model_data: 2001
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  CUBA_Blackline_Cola:
+    item: CLAY_BALL
+    name: "&0&lCUBA Blackline &7&l- &4&lCola &f&l66mg"
+    type: "CUBA_Blackline"                # <- key from snus_types
+    size: 20
+    custom_model_data: 2001
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Iceberg_Black:
+    item: CLAY_BALL
+    name: "&7&lIceberg &7&l- &0&lBlack &f&l50mg"
+    type: "Iceberg"
+    size: 20
+    custom_model_data: 2002
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Iceberg_Berries:
+    item: CLAY_BALL
+    name: "&7&lIceberg &7&l- &d&lBerries &f&l50mg"
+    type: "Iceberg"
+    size: 20
+    custom_model_data: 2003
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Iceberg_Cherry:
+    item: CLAY_BALL
+    name: "&7&lIceberg &7&l- &4&lCherry &f&l50mg"
+    type: "Iceberg"
+    size: 20
+    custom_model_data: 2002
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Iceberg_Emerald:
+    item: CLAY_BALL
+    name: "&7&lIceberg &7&l- &a&lApple Mint &f&l50mg"
+    type: "Iceberg"
+    size: 20
+    custom_model_data: 2002
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Iceberg_Bubblegum:
+    item: CLAY_BALL
+    name: "&7&lIceberg &7&l- &d&lBubblegum &f&l50mg"
+    type: "Iceberg"
+    size: 20
+    custom_model_data: 2002
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Iceberg_Dragon_Fruit:
+    item: CLAY_BALL
+    name: "&7&lIceberg &7&l- &5&lDragon Fruit &f&l50mg"
+    type: "Iceberg"
+    size: 20
+    custom_model_data: 2002
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Iceberg_Grape:
+    item: CLAY_BALL
+    name: "&7&lIceberg &7&l- &5&lGrape &f&l50mg"
+    type: "Iceberg"
+    size: 20
+    custom_model_data: 2002
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Iceberg_Watermelon_Lime:
+    item: CLAY_BALL
+    name: "&7&lIceberg &7&l- &a&lWatermelon Lime &f&l50mg"
+    type: "Iceberg"
+    size: 20
+    custom_model_data: 2002
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  VELO_Mid_Ruby_Berry:
+    item: CLAY_BALL
+    name: "&f&lVELO &7&l- &c&lRuby Berry &f&l10mg"
+    type: "VELO_Mid"
+    size: 20
+    custom_model_data: 2003
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  VELO_Mid_Cherry_Ice:
+    item: CLAY_BALL
+    name: "&f&lVELO &7&l- &4&lCherry Ice &f&l10mg"
+    type: "VELO_Mid"
+    size: 20
+    custom_model_data: 2003
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  VELO_Mid_Icy_Berries:
+    item: CLAY_BALL
+    name: "&f&lVELO &7&l- &9&lIcy Berries &f&l10mg"
+    type: "VELO_Mid"
+    size: 20
+    custom_model_data: 2003
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  VELO_Mid_Orange_Spark:
+    item: CLAY_BALL
+    name: "&f&lVELO &7&l- &e&lOrange Spark &f&l10mg"
+    type: "VELO_Mid"
+    size: 20
+    custom_model_data: 2003
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  VELO_Hard_Breezy_Mango:
+    item: CLAY_BALL
+    name: "&f&lVELO &7&l- &e&lBreezy Mango &f&l20mg"
+    type: "VELO_Hard"
+    size: 20
+    custom_model_data: 2003
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  VELO_Hard_Mighty_Peppermint:
+    item: CLAY_BALL
+    name: "&f&lVELO &7&l- &9&lMighty Peppermint &f&l20mg"
+    type: "VELO_Hard"
+    size: 20
+    custom_model_data: 2003
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Lite_Cherry_Light:
+    item: CLAY_BALL
+    name: "&c&l77 &7&l- &c&lCherry Light &f&l8mg"
+    type: "77_Lite"
+    size: 20
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Lite_Cola_Light:
+    item: CLAY_BALL
+    name: "&c&l77 &7&l- &4&lCola_Light &f&l8mg"
+    type: "77_Lite"
+    size: 20
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Lite_Forest_Fruits:
+    item: CLAY_BALL
+    name: "&c&l77 &7&l- &5&lForest Fruits &f&l8mg"
+    type: "77_Lite"
+    size: 20
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Lite_Green_Tea:
+    item: CLAY_BALL
+    name: "&c&l77 &2&l- &c&lGreen Tea &f&l8mg"
+    type: "77_Lite"
+    size: 20
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Lite_Timber_Light:
+    item: CLAY_BALL
+    name: "&c&l77 &7&l- &6&lTimber Light &f&l8mg"
+    type: "77_Lite"
+    size: 20
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Lite_Strawberry_Light:
+    item: CLAY_BALL
+    name: "&c&l77 &7&l- &c&lStrawberry Light &f&l8mg"
+    type: "77_Lite"
+    size: 20
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Mid:
+    item: CLAY_BALL
+    name: "&d&l77 &7&l- Raspberry Delight &c&l20mg"
+    type: "77_Mid"
+    size: 20
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Strong_Cola_Ice:
+    item: CLAY_BALL
+    name: "&c&l77 Ghost &7&l- &4&lCola Ice &f&l40mg"
+    type: "77_Strong"
+    size: 24
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Strong_Bubble_Gum:
+    item: CLAY_BALL
+    name: "&c&l77 Ghost &7&l- &9&lBubble Gum &f&l40mg"
+    type: "77_Strong"
+    size: 24
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Strong_Mango:
+    item: CLAY_BALL
+    name: "&c&l77 Ghost &7&l- &e&lMango &f&l40mg"
+    type: "77_Strong"
+    size: 24
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  77_Strong_Original:
+    item: CLAY_BALL
+    name: "&c&l77 Ghost &7&l- &8&lOriginal &f&l40mg"
+    type: "77_Strong"
+    size: 24
+    custom_model_data: 2004
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  GARANT_Energy_Drink:
+    item: CLAY_BALL
+    name: "&9&lGARANT &7&l- &e&lEnergy Drink &f&l50mg"
+    type: "GARANT"
+    size: 27
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  GARANT_Grape:
+    item: CLAY_BALL
+    name: "&9&lGARANT &7&l- &9&lGrape &f&l50mg"
+    type: "GARANT"
+    size: 27
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  GARANT_Cola:
+    item: CLAY_BALL
+    name: "&9&lGARANT &7&l- &c&lCola &f&l50mg"
+    type: "GARANT"
+    size: 27
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  GARANT_Pineapple:
+    item: CLAY_BALL
+    name: "&9&lGARANT &7&l- &a&lPineapple &f&l50mg"
+    type: "GARANT"
+    size: 27
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  GARANT_Raspberry:
+    item: CLAY_BALL
+    name: "&9&lGARANT &7&l- &d&lRaspberry &f&l50mg"
+    type: "GARANT"
+    size: 27
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  GARANT_Cherry:
+    item: CLAY_BALL
+    name: "&9&lGARANT &7&l- &4&lCherry &f&l50mg"
+    type: "GARANT"
+    size: 27
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  GARANT_Ice_Peach:
+    item: CLAY_BALL
+    name: "&9&lGARANT &7&l- &6&lIce Peach &f&l50mg"
+    type: "GARANT"
+    size: 27
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  GARANT_Mango_Lime:
+    item: CLAY_BALL
+    name: "&9&lGARANT &7&l- &a&lMango Lime &f&l50mg"
+    type: "GARANT"
+    size: 27
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Bubblegum:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &d&lBubblegum &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_c:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &6&lCappuccino &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Cherry_Cola:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &4&lCherry Cola &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Dark_Cherry:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &4&lDark Cherry &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Frosted_Ice:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &b&lFrosted Ice &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Grape_Ice:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &5&lGrape Ice &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Kiwi:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &a&lKiwi &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Lemonade:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &e&lLemonade &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Mango_Ice:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &e&lMango Ice &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Orange:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &6&lOrange &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Pear:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &2&lPear &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Strawberry_Lychee:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &c&lStrawberry Lychee &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  PABLO_Tropical_Punch:
+    item: CLAY_BALL
+    name: "&c&lPABLO &7&l- &c&lTropical Punch &f&l55mg"
+    type: "PABLO"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  BJORN_Blueberry:
+    item: CLAY_BALL
+    name: "&fBJÖRN &7&l- &5&lBlueberry &f&l30mg"
+    type: "BJORN"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  BJORN_Cola_Ice:
+    item: CLAY_BALL
+    name: "&fBJÖRN &7&l- &4&lCola Ice &f&l30mg"
+    type: "BJORN"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  BJORN_Elder_Punch:
+    item: CLAY_BALL
+    name: "&fBJÖRN &7&l- &d&lElder Punch &f&l30mg"
+    type: "BJORN"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  BJORN_Berry_Liquorice:
+    item: CLAY_BALL
+    name: "&fBJÖRN &7&l- &e&lBerry Liquorice &f&l30mg"
+    type: "BJORN"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  BARON_Classic:
+    item: CLAY_BALL
+    name: "&6&lBARON &7&l- &6&lClassic &f&l77mg"
+    type: "BARON"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  BARON_Menthol:
+    item: CLAY_BALL
+    name: "&6&lBARON &7&l- &7&lMenthol &f&l77mg"
+    type: "BARON"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  BARON_Wintergreen:
+    item: CLAY_BALL
+    name: "&6&lBARON &7&l- &2&lWintergreen &f&l77mg"
+    type: "BARON"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  BARON_Eucalyptus:
+    item: CLAY_BALL
+    name: "&6&lBARON &7&l- &b&lEucalyptus &f&l77mg"
+    type: "BARON"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Supreme_Currant_Mix:
+    item: CLAY_BALL
+    name: "&e&lSupreme &7&l- &c&lCurrant Mix &f&l150mg"
+    type: "Supreme"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Supreme_Fruit_Juice:
+    item: CLAY_BALL
+    name: "&e&lSupreme &7&l- &e&lFruit Juice &f&l150mg"
+    type: "Supreme"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Supreme_Grape:
+    item: CLAY_BALL
+    name: "&e&lSupreme &7&l- &5&lGrape &f&l150mg"
+    type: "Supreme"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Supreme_Mint_Lime:
+    item: CLAY_BALL
+    name: "&e&lSupreme &7&l- &b&lMint Lime &f&l150mg"
+    type: "Supreme"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Supreme_Raspberry:
+    item: CLAY_BALL
+    name: "&e&lSupreme &7&l- &c&lRaspberry &f&l150mg"
+    type: "Supreme"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Supreme_Summer_Explosion:
+    item: CLAY_BALL
+    name: "&e&lSupreme &7&l- &e&lSummer Explosion &f&l150mg"
+    type: "Supreme"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+  Supreme_Super_Melon:
+    item: CLAY_BALL
+    name: "&e&lSupreme &7&l- &2&lSuper Melon &f&l150mg"
+    type: "Supreme"
+    size: 20
+    custom_model_data: 2005
+    lore:
+      - "&7&o%remaining%/%max%"
+
+
+
+
+
+
+
+
+
+
+

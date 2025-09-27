@@ -1,0 +1,143 @@
+# ================================================
+#  Cigarette packs configuration (cigarette.yml)
+#  - Only cigarette_packs live here.
+#  - General/defaults (materials, lore formats, etc.) still live in config.yml
+# ================================================
+
+cigarette_packs:
+
+  L&M_Red:
+    item: PAPER
+    name: "&c&lL&&c&lM"
+    size: 20
+    custom_model_data: 1001
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  L&M_Blue:
+    item: STICK
+    name: "&9&lL&&9&lM"
+    size: 20
+    custom_model_data: 1002
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Marlboro_Gold:
+    item: STICK
+    name: "&6&lMarlboro Gold"
+    size: 20
+    custom_model_data: 1003
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Marlboro_Red:
+    item: STICK
+    name: "&c&lMarlboro Red"
+    size: 20
+    custom_model_data: 1004
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Pall_Mall_Red:
+    item: STICK
+    name: "&c&lPall Mall"
+    size: 20
+    custom_model_data: 1005
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Pall_Mall_Blue:
+    item: STICK
+    name: "&9&lPall Mall"
+    size: 20
+    custom_model_data: 1006
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Davidoff_Classic:
+    item: STICK
+    name: "&4&lDavidoff Classic"
+    size: 20
+    custom_model_data: 1007
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Davidoff_Gold:
+    item: STICK
+    name: "&6&lDavidoff Gold"
+    size: 20
+    custom_model_data: 1008
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Camel_Yellow:
+    item: STICK
+    name: "&e&lCamel Yellow"
+    size: 20
+    custom_model_data: 1009
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Winston_Red:
+    item: STICK
+    name: "&f&lWinston &7| &7&lOriginal &4&lRed"
+    size: 20
+    custom_model_data: 1010
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Winston_Blue:
+    item: STICK
+    name: "&9&lWinston &7| &b&lLegend &f&lBlue"
+    size: 20
+    custom_model_data: 1011
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Lucky_Strike_Red:
+    item: STICK
+    name: "&c&lLucky Strike"
+    size: 20
+    custom_model_data: 1012
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  Lucky_Strike_Blue:
+    item: STICK
+    name: "&9&lLucky Strike"
+    size: 20
+    custom_model_data: 1013
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  P&S_Red:
+    item: STICK
+    name: "&c&lP&S"
+    size: 20
+    custom_model_data: 1014
+    lore:
+      - "&7"
+      - "&7&o%size%/%max%"
+
+  # --- Add more packs below in the same format ---
+  # My_Brand:
+  #   item: PAPER
+  #   name: "&f&lMy Brand"
+  #   size: 20
+  #   custom_model_data: 0
+  #   lore:
+  #     - "&7"
+  #     - "&7&o%remaining%/%max%"
